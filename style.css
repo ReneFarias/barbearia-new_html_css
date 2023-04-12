@@ -1,0 +1,420 @@
+
+/* importei e usei no body aplica em todo conteúdo a font, link pego no site google fonts*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    background: #BBBBBB;
+    /* para ter uma margen  de 20px entre cima e baixo do cabeçalho */
+    padding: 20px;
+}
+.caixa {
+    /* position relative para levantar e pegar na caixa e o menu vim para dentro da caixa, pois o menu está como absolute e está no ponto em relação a página */
+    position: relative;
+    width: 940px;
+/* para centralizarmos automaticamente a caixa independente da tela usamos margin para definir o inicio em 0 e auto para aplicar a diferença entre os lado automaticamente */
+    margin: 0 auto;
+}
+
+/* itens da lista dentro da tag nav */
+
+nav {
+    /* absolute inicia de um ponto fora de onde iniciou,e para colocarmos dentro de uma div nesse caso div caixa precisamos colocar position relativa na tag que vira, pois o menu está como absolute e está no ponto em relação a página*/
+    position: absolute;
+    /* para começar do topo 0, mas 110px para esta onde queremos */
+    top: 110px;
+    /* para começar do lado direito*/
+    right: 0;
+
+    
+    /* usado para pegar elemento de do ponto de origem e demais alterações vai seguir aquele ponto 
+    position: relative;
+     --como falado anteriormente, ele anda do ponto de origem no topo para baixo
+    top: 20px;
+     --aqui vemos o elemento andar para a esquerda partindo do ponto que declaramos no codigo position:relative 
+    left: 300px; */
+}
+nav li {
+    display: inline;
+    /* margin é o espaçamento externo e quero a esquerda, sequencia é primeiro pro topo, direita, baixo, esquerda */
+    margin: 0 0 0 15px;
+}
+nav a {
+    /* text-transform = transformar-texto: em maiusculo */
+    text-transform: uppercase;
+    color: #000000;
+    /* peso-fonte: negrito */
+    font-weight: bold;
+    font-size: 22px;
+    /* decoração-texto: nenhuma */
+    text-decoration: none;
+    /* o ponto absoluto de outro elemento, para mudar a posição do ponto inicial que ele se encontra */
+/* pegamos a tag nav e os links como a, e o :hover que é quando passar o mouse por cima, detro dos {} tem mudar de cor, e deixar texto decorado com sublinhado */
+}
+nav a:hover {
+        color: #C78C19;
+        text-decoration: underline;
+ }
+
+
+
+.produtos {
+    width: 940px;
+    /* 0 para cima e para baixo, e auto para os lados */
+    margin: 0 auto;
+    /* espaçamento interno 50 pixels para cima e baixo, e 0 para os lados */
+    padding: 50px 0;
+}
+/* pegamos cada item e determinamos seu tamanho e detalhes*/
+.produtos li {
+    /* itens um do lado do outro, por que eles ocupa o tamanho do centeúdo deles e 100% da largura; Inline-block pois com o tamanho do seu conteúdo, mas regulável. Pois o seu tamanho pode ser ajustado, tanto na largura, quanto na altura.*/
+    display: inline-block;
+    text-align: center;
+    /* para deixarmos do mesmo tamanho cada item */
+    width: 30%;
+/* para resolver o problema pelo fato de estar alinhando com a linha de baixo usando o inline-block, sendo assim eles alinha com a linha de cima */
+    vertical-align: top;
+    /*background: #CCCCCC;*/
+    /* para dar distancia externamente, cima e baixo 0, e aos lados 1.5 + 1.5 lembrando que estamos usando % para essas margens */
+    margin: 0 1.5%;
+    /* espaçamento interno 30px cima e baixo + 20px para os lados, ***!! ATENÇÃO O elemento aumenta o seu tamanho. Quando declaro que existe um espaçamento interno, estou aumentando o conteúdo. */
+    padding: 30px 20px;
+    /* para definir o width de cada item novamente convertendo os px e % ajustando a posição, para não ficar passando */
+    box-sizing: border-box;
+    /* bordas-arredondadas: 10 pixels, só um funciona em todas, se colocar 4 valores ai pega os 4 cantos */
+    border-radius: 10px;
+
+    /* cor da borda 
+    border-color: #000000;
+     largura da borda 
+    border-width: 2px;
+     estilo da borda
+     essa borda é a mesma coisa da de cima, tamanho 2px, solido, cor preta. Podemos colocar borda em qualquer conteúdo, como exp: caixa do conteúdo, caixa do espaçamento interno, a caixa da borda, e a caixa do espaçamento externo */     
+    border: 2px solid #000000;
+}
+/* produtos itens: quando o mouse estiver por cima; troca a cor */
+.produtos li:hover{
+    border-color: #C78C19;
+} 
+/* produtos itens: quando estiver ativo mudar de cor para verde */
+.produtos li:active{
+    border-color: #08BC19;
+} 
+/* produtos itens: quando mouse por cima o elemento h2{ tamanho-fonte: aumenta para 34px */
+.produtos li:hover h2{
+   font-size: 34px;
+} 
+/* para alterar tag especificas que estão dentro de classe, chama clase depois as tags pela sua hierarquia */
+.produtos h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.produto-descricao {
+    font-size: 18px;
+}
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+footer {
+    text-align: center;
+    /* para colocar imagem de fundo exportada usamos url("caminho"), importante lembrar que a imagem replica até preencher a área */
+    background: url("bg.jpg");
+    /* para darmos espaço entre cima e baixo */
+    padding: 40px 0;
+}
+.copyright {
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 20px 0 0;
+}
+/* para centralizar o conteúdo */
+
+
+form {
+    /* dar espaço entre cima e baixo e 0 aos lados */
+    margin: 40px 0;
+}
+
+/* com a "," colocamos mais tags para estilizar no css recebendo os mesmos valores de um campo já criado mantendo proporções, poupando trabalho */
+/* mudamos p = paragrafo para legend, e com isso temos que mudar no css também para surtir efeito na tag */
+form label, form legend {
+    /* pra quebrar a linha */
+    display: block;
+    font-size: 20px;
+    /* margem para baixo de 10px */
+    margin: 0 0 10px;
+}
+
+/* olhe que colocamos a "," para adicionar mais uma tag para receber os valores passados, poupando de recriar o mesmo codigo 
+form input, form textarea 
+Só que criamos uma classe para colocarmos em tags especificas, pois estava pegando todos os inputs no form input como visto na linha anterior, e os input's radio não podem ter o display: block */
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    /* espaço dentro do input 10 cima e baixo e 25 para os lados, se aplica ao botão por fazer parte */
+    padding: 10px 20px;
+    /* para ocupar 50% da pagina */
+    width: 50%;
+}
+
+.checkbox {
+/* cima e baixo 20px lados 0. ATENÇÂO: é muito importante sermos o mais especifico possivel no css para evitar erros futuros, usando classes, seletores "," e id */
+    margin: 20px 0p;
+}
+.enviar {
+    /* largura do elemento */
+    width: 40%;
+    /* espaço interno, 15px cima e baixo e 0 para os lados */
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    /* tempo em "s" segundos para ocorrer essa transição, e se colocarmos all acontece em todos elementos, nesse caso os 1 seg para aumentar e diminuir */
+    transition: 1s all;
+    /* para quando o mouse estiver em cima mostrar para o usuário que é clicavel */
+    cursor: pointer;
+}
+/* classe enviar :hover = quando o mouse está por cima, muda : */
+.enviar:hover {
+    background: red;
+    
+    /* quando colocarmos o mouse em cima do elemento ele se transforma, nesse caso a escala dele aumenta proporcionalmente 20% todos os atributos, onde o calculo é 1.2 
+    transform: scale(1.2);*/
+    /* para o elemento rotacionar = rotate, e 70 deg = graus . ATENÇÃO no css o ultimo item sobreescreve o anterior, nesse caso o scale não funciona
+    ai só somar as duas, depois do ; coloca scale(1.2); */
+    transform: rotate(70deg) scale(1.2);
+}
+table {
+    margin: 20px 0 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+td, th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+
+/* banner da página */
+
+.banner {
+    width: 100%;
+}
+.titulo-principal {
+    text-align: center;
+    /* em significa tamanho padrão, nesse caso de 15px sendo padrão 2em é 30px S*/
+    font-size: 2em ;
+    /* aqui tera espaço do tamanho da fonte padrão para baixo */
+    margin: 0 0 1em;
+    /* para limpar a esquerda, quando utiliza o flooat tem que usar o clear na área que não que que afete. Pois o flooat faz Descolar o elemento na lateral e deixar os outros elementos ao redor */
+    clear: left;
+    /* Com CSS 3, podemos utilizar mais uma camada - a de opacidade, chamada alfa - nas cores em RGB. Para tanto, utilizamos o rgba e então definir os valores que quisermos. 
+    color: rgba(0, 0, 0, 0.3); */
+/* inserir sombras em textos 
+    text-shadow: 2px 2px #FF0000;  */
+}
+
+/* também usamos PSEUDO ELEMENTOS especificos, como classe:primeira-letra, podemos alterar a primeira letra das classes 
+.titulo-principal:first-letter {
+    font-weight: bold;
+}*/
+
+/* também usamos PSEUDO ELEMENTOS especificos, como classe:primeira-linha, podemos alterar a primeira linha das classes 
+p::first-line {
+    font-style: italic;
+}
+/ com isso podemos alterar o que vem antes da letra, um pseudo elemento /
+.titulo-principal::before {
+    / e aqui o content = conteudo, que vamos inserir /
+    content: "[ ";
+}
+.titulo-principal::after {
+    content: " ]";
+} */
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p {
+    /* margem para baixo do tamanho padrão da fonte */
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+.principal em {
+    font-style: italic;
+}
+
+.utensilios {
+    width: 120px;
+    /* para a imagem flutuar e os elementos nesse caso textos ficarem em volta, ele afeta completamente a estrutura da pagina todos elementos abaixo dele, então usamos o clear no css do elemento onde não queremos o efeito */
+    float: left;
+    /* margem para cima direita baixo esquerda, essa é a ordem do margin */
+    margin: 0 20px 20px 0;
+}
+
+.mapa {
+    padding: 3em 0;
+    /* para usarmos no fundo degrader linear, se colocarmos radial ai fica como circulo, entre () colocamos a quantidade das cores que quisermos, e a % de cada cor que quisermos */
+    background: linear-gradient(#FEFEFE, #888888);
+}
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 3em 0;
+    background: #888888;
+/* Outra possibilidade no CSS 3 é criar sombras internas. Utilizaremos a própria sessão de benefícios para exempliciar esse efeito, que será utilizado em box-shadowe se chama inset. Seu posicionamento será a partir do centro do elemento e terá a cor vermelha. Ao carregarmos a página, não notaremos qualquer mudança. Isso se deve pelo fato de que a sombra possui o mesmo tamanho do elemento. Para que ela se torne perceptível, criaremos um espaçamento de 30px.
+    box-shadow: inset 0 0 30px #FF0000; */
+} 
+
+.conteudo-beneficios {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios {
+    width: 40%;
+    /* para usarmos o display: inline-block precisamos deixar todos as linhas coladas no html, um espaço de uma linha dá errado ou mesmo espaços vagos, deixando colado fica tudo um do lado do outro
+    
+    display: inline-block;
+    /* para alinhar com a linha de cima */
+    vertical-align: top;
+}
+
+.itens {
+    /* altura da linha 1 e meio do tamanho da fonte */
+    line-height: 1.5;
+}
+
+/* para pegarmos um item da classe itens, sendo item = li da lista ul, nesse caso o primeiro; serve muito para editar uma tag especifica pois já estão todas em uma classe evitando pegar pelo id por exemplo; e se fosse :last-child seria o ultimo, podemos escolher qual elemento para atribuir valores com :nth-child("NUMERO DO ELEMENTO"), e se entre os () colocarmos 2n pegamos só os ele PARES.
+Chamamos isso de "PSEUDOS ELEMENTOS" */
+.itens:first-child {
+    font-weight: bold;
+}
+
+/* .classe:antes = com isso podemos alterar o que vem antes, pseudo elementos, after depois do item por exemplo */
+.itens:before {
+    content: "⭐";
+}
+
+.imagem-beneficios {
+    width: 60%;
+/* opacidade da imagem, 1 ela tá normal 0 ela some, por exemplo 0.3 fica 30% da luz da imagem; aqui ela está normal */
+    opacity: 1;
+/* transição em 400 mile segundos */
+    transition: 400ms;
+}
+/* quando mouse por cima */
+.imagem-beneficios:hover {
+    /* opacidade da img em 30% */
+    opacity: 0.3;
+/* para gerar sombra, esse efeito é box-shadow, que possui a propriedade do eixo X, T e uma cor. Queremos deslocar 10px no eixo X e Y, a cor que utilizaremos será preto. 
+    box-shadow: 10px 10px #000000; */
+/* terceira propriedade chamada blur, em que podemos aplicar um nível de desfoque específico, no caso, inseriremos um valor de 5px. Quanto maior a quantidade de pixels que inserirmos, mais claro sera o efeito de desfoque. 
+    box-shadow: 10px 10px 5px #000000; */
+/* Temos ainda uma quarta propriedade que configura a intensidade da borda a partir do tamanho do elemento, isto é, o tamanho da sombra projetada. Neste caso, inseriremos 20px: 
+    box-shadow: 10px 10px 5px 20px #000000; */
+/* Podemos adicionar várias sombras em um mesmo elemento, basta que o conteúdo esteja separado por uma vírgula. Essa nova sombra terá valores negativos e terá a cor amarela. 
+    box-shadow: 10px 10px 5px 20px #000000, -10px -10px yellow; */
+/* Podemos, ainda, inserir uma terceira sombra com a cor rgba() com a camada de opacidade e borda vermelha. */
+    box-shadow: 10px 10px 5px 20px #000000, -10px -10px yellow, -20px 20px rgba(255,0,0,0.5);
+
+
+}
+
+
+
+
+
+
+
+.video {
+    width: 560px;
+    /* 1em medida padrão de espaço cima e baixo, e espaço auto lateral para centralizar */
+    margin: 2em auto;
+}
+
+/* Precisamos entregar para telas até 450px um estilo diferente, e faremos isso por meio de media queries. Perguntaremos ao navegador qual é o tamanho da tela em questão e, se for aquele que desejamos, entregaremos o estilo correto.
+
+Para realizar isso, utilizaremos o @media, com o valor do tipo de tela screen e a pesquisa. Todas as telas que tenham até 450, terão esse estilo diferente, reescrito. Para exempliciar, colocaremos no background um estilo da cor vermelha. 
+É dentro dessa media query que criamos um estilo visual que compreenda telas de até 480px.*/
+@media screen and (max-width: 480px) { 
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    nav {
+        position:static;
+    }
+    .lista-beneficios, imagem-beneficios {
+        width: 100%
+    }
+}
+
+
+/* olhe que todos os paragrafos estão marcados em vermelho, COMO MARCAR APENAS UM ELEMENTO ? usaremos ""SELETORES AVANÇADOS"
+main p {
+    background: red;
+}
+*/
+/* com seletor > maior pegamos o primeiro filho de main, primeiro p /
+main > p {
+    background: red; 
+}
+/ Neste caso, usamos img como elemento âncora e para o primeiro irmão usamos o sinal de "+" /
+img + p { 
+    background: blue;
+}
+/ Para selecionar todos os parágrafos localizados depois de uma imagem usamos o seletor ~ /
+img ~ p {
+    background: yellow
+} */
+/* No CSS podemos, inclusive, excluir itens específicos. Se quisermos excluir todos os parágrafos que não compõe missao, escreveremos: 
+.principal p:not(#missao) {
+    background: orange;
+} */
+
+
+/*
+Em nosso CSS, verificaremos que o tamanho da imagem é de 120px, mas como podemos fazer com que esse tamanho seja proporcional? Basta mudar para percentual, isto é, 20% de largura tendo a tela como referência.
+Para que a imagem sempre ocupe a medida correta em outros dispositivos, utilizamos a propriedade calc. O calculo que desejamos realizar é escrito entre parênteses, em que inserimos o primeiro valor, o tipo de operção e o resultado esperado.
+
+.utensilios {
+    width: calc(40% - 26px);
+    float: left;
+    Margin: 0 20px 20px 
+}
+
+Dessa forma, foi calculado precisamente 350px de largura para este elemento. É possível encadear quantas operações quisermos, no mesmo modelo de sintaxe.
+
+.utensilios {
+    width: calc(40% - (26px * 4);
+    float: left;
+    Margin: 0 20px 20px 
+}
+A propriedade calc nos dá o poder de fazer com o que cremos valores proporcionais específicos. */
