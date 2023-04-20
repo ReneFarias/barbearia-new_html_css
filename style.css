@@ -119,7 +119,7 @@ nav a:hover {
 }
 footer {
     text-align: center;
-    background: #888888;
+    background: #555555;
     /* para colocar imagem de fundo exportada usamos url("caminho"), importante lembrar que a imagem replica até preencher a área 
     background: url("https://raw.githubusercontent.com/ReneFarias/barbearia-new_html_css/main/imgs/bg.jpg"); */
     /* para darmos espaço entre cima e baixo */
